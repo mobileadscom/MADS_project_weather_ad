@@ -1,3 +1,7 @@
+body {
+	font-family: 'Arial'
+}
+
 #rma-widget  {
     width: 300px;
     height: 250px;
@@ -16,4 +20,25 @@
 	top: 0px;
 	left: 0px;
 	z-index: -1;
+}
+
+.ct-btn {
+	color: #00899B;
+	background-color: white;
+	border: none;
+	font-weight: 600;
+	padding: 6px 10px;
+	position: absolute;
+}
+
+.bottle, .logo, .copy {
+	position: absolute;
+}
+
+.copy{
+	color: #F2F4F7;
+}
+
+.headline {
+	font-weight: 600;
 }

@@ -41,26 +41,31 @@ class AdUnit extends Mads {
       h = Math.round(h / 10) * 10;
       document.getElementById('rma-widget').style.width = w.toString() + 'px';
       document.getElementById('rma-widget').style.height = h.toString() + 'px';
+      return w.toString() + 'x' + h.toString();
     }
     else {
       document.getElementById('rma-widget').style.width = '300px';
       document.getElementById('rma-widget').style.height = '250px';
+      return '300x250';
     }
-    
-
   }
 
-  getData() {
+  getData(adSize) {
     // get latitude and longitude
     axios.get('https://api.waqi.info/feed/here/?token=367864ec788156f6ff0b984252e4405d6072b071').then((r) => { 
       console.log(r);
       if (r.data.data.city) {
         // get weather
+        var apikeys = ['e8d27050f5101eead5d03a04e03d0e30', 'ac6f574b2e0e75e42a3ec17e145d2731', 'd503554c1185201323f45d8e76c7c757'];
+        var randomNo = Math.floor(Math.random() * 3 );
+        var apikey = apikeys[randomNo]
+        console.log(apikey)
+
         axios.get('https://api.openweathermap.org/data/2.5/weather', {
           params: {
             lat: r.data.data.city.geo[0].toFixed(2).toString(),
             lon: r.data.data.city.geo[1].toFixed(2).toString(),
-            appid: 'ac6f574b2e0e75e42a3ec17e145d2731'
+            appid: apikey
           }
         }).then((res) => {
           console.log(res);
@@ -91,14 +96,16 @@ class AdUnit extends Mads {
           this.doInit({
             weather: weather,
             api: r.data.data.aqi.toString(),
-            temp: (res.data.main.temp - 273.16).toFixed(0).toString()
+            temp: (res.data.main.temp - 273.16).toFixed(0).toString(),
+            adSize: adSize
           });
         }).catch((err) => {
           console.log(err);
           this.doInit({
             weather: 'sunny',
             api: '0',
-            temp: '28'
+            temp: '28',
+            adSize: adSize
           });
         })
       }
@@ -106,7 +113,8 @@ class AdUnit extends Mads {
         this.doInit({
           weather: 'sunny',
           api: '0',
-          temp: '28'
+          temp: '28',
+          adSize: adSize
         });
       }
     }).catch((error) => {
@@ -114,7 +122,8 @@ class AdUnit extends Mads {
         this.doInit({
           weather: 'sunny',
           api: '0',
-          temp: '28'
+          temp: '28',
+          adSize: adSize
         });
     });
   }
@@ -132,8 +141,8 @@ class AdUnit extends Mads {
 
   render() {
     console.log('data', this.data);
-    this.fixAdSize();
-    this.getData();
+    var adSize = this.fixAdSize();
+    this.getData(adSize);
 
     /*return `
       <div class="container" id="ad-container">
@@ -163,7 +172,15 @@ class AdUnit extends Mads {
     `;*/
     console.log(this.params);
     const backgroundNode = `<img id="ad-background" src="${ad.creative.url}" alt="">`;
-    document.getElementById('ad-container').innerHTML = `${ad.description.text}${backgroundNode}`;
+    document.getElementById('ad-container').innerHTML = `${backgroundNode}
+    <div class="copy" ${ad.copy.style}>
+      <div class="headline" ${ad.headlineStyle.style}>${ad.headline.text}</div>
+      <div class="description" ${ad.descriptionStyle.style}>${ad.description.text}</div>
+      <div class="variableData" ${ad.data.style}>${ad.data.text}</div>
+    </div>
+    <img src="${ad.logo.url}" ${ad.logo.style} class="logo" />
+    <button class="ct-btn" ${ad.btnStyle.style}>SHOP NOW</button>
+    <img src="${ad.bottle.url}" ${ad.bottle.style} class="bottle"/>`;
   }
   
 
