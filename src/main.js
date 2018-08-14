@@ -52,7 +52,7 @@ class AdUnit extends Mads {
 
   getData(adSize) {
     // get latitude and longitude
-    axios.get('http://ip-api.com/jon').then((response) => {
+    axios.get('http://ip-api.com/json').then((response) => {
       console.log(response);
 
       // get weather
