@@ -119,7 +119,7 @@ export function processMacrosInParams(params, conditions) {
                 param.text = getRandomItem(text);
             }
         }
-console.log(param)
+
         if (param.url) {
             param.url = replaceMacros(param.url);
         }

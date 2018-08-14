@@ -13,6 +13,10 @@ body {
 	position: relative;
 }
 
+#ad-container:hover {
+	cursor: pointer;
+}
+
 #ad-background {
 	position: absolute;
 	width: 100%;

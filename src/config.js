@@ -49,8 +49,16 @@ export default {
     "data": {
     	"adSize": {
     		"300x250": {
-    			"text": "{{temp}}<span style=\"font-size: 42px;vertical-align: top;\">0</span>c",
-	    		"style": "font-size: 76px;"
+    			"weather": {
+    				"hazy": {
+    					"text": "{{api}}<span style=\"font-size: 32px;\">API</span>",
+			    		"style": "font-size: 76px;"
+    				},
+    				"Other": {
+    					"text": "{{temp}}<span style=\"font-size: 42px;vertical-align: top;\">0</span>c",
+			    		"style": "font-size: 76px;"
+    				}
+    			}
     		}
     	}
     },

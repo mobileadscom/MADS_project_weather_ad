@@ -52,80 +52,94 @@ class AdUnit extends Mads {
 
   getData(adSize) {
     // get latitude and longitude
-    axios.get('https://api.waqi.info/feed/here/?token=367864ec788156f6ff0b984252e4405d6072b071').then((r) => { 
-      console.log(r);
-      if (r.data.data.city) {
-        // get weather
-        var apikeys = ['e8d27050f5101eead5d03a04e03d0e30', 'ac6f574b2e0e75e42a3ec17e145d2731', 'd503554c1185201323f45d8e76c7c757'];
-        var randomNo = Math.floor(Math.random() * 3 );
-        var apikey = apikeys[randomNo]
-        console.log(apikey)
+    axios.get('http://ip-api.com/jon').then((response) => {
+      console.log(response);
 
-        axios.get('https://api.openweathermap.org/data/2.5/weather', {
-          params: {
-            lat: r.data.data.city.geo[0].toFixed(2).toString(),
-            lon: r.data.data.city.geo[1].toFixed(2).toString(),
-            appid: apikey
-          }
-        }).then((res) => {
-          console.log(res);
+      // get weather
+      var apikeys = ['e8d27050f5101eead5d03a04e03d0e30', 'ac6f574b2e0e75e42a3ec17e145d2731', 'd503554c1185201323f45d8e76c7c757'];
+      var randomNo = Math.floor(Math.random() * 3 );
+      var apikey = apikeys[randomNo];
+      axios.get('https://api.openweathermap.org/data/2.5/weather', {
+        params: {
+          lat: response.data.lat.toFixed(2).toString(),
+          lon: response.data.lon.toFixed(2).toString(),
+          appid: apikey
+        }
+      }).then((res) => {
+        console.log(res);
 
-          // weather type
-          // 2xx - thunderstorm
-          // 3xx - drizzle
-          // 5xx - rainy
-          // 6xx - snow
-          // 7xx - hazy
-          // 800 - sunny
-          // 8xx - cloudy
-          
-          var weather = this.idToWeather(res.data.weather[0].id);
+        // weather type
+        // 2xx - thunderstorm
+        // 3xx - drizzle
+        // 5xx - rainy
+        // 6xx - snow
+        // 7xx - hazy
+        // 800 - sunny
+        // 8xx - cloudy
+        
+        var weather = this.idToWeather(res.data.weather[0].id);
 
+        // check if it's hazy
+        if (weather == 'hazy') {
+          console.log('hazy');
+
+            // get aqi
+            axios.get(`https://api.waqi.info/feed/geo:${response.data.lat};${response.data.lon}/?token=367864ec788156f6ff0b984252e4405d6072b071`).then((r) => { 
+              console.log(r);
+              this.doInit({
+                weather: weather,
+                api: r.data.data.aqi.toString(),
+                temp: (res.data.main.temp - 273.16).toFixed(0).toString(),
+                adSize: adSize
+              });
+            }).catch((e) => {
+              console.log(e);
+              this.defaultCondition(adSize);
+            });
+        }
+        else {
           // check for cold weather
           if (weather != 'rainy') {
-            // console.log(res.data.main.temp - 273.15);
             if (res.data.main.temp - 273.15 < 25) {
               weather = 'cold';
             }
           }
-
-          if (weather == 'hazy') {
-
-          }
           console.log(weather);
           this.doInit({
             weather: weather,
-            api: r.data.data.aqi.toString(),
+            api: '30',
             temp: (res.data.main.temp - 273.16).toFixed(0).toString(),
             adSize: adSize
           });
-        }).catch((err) => {
-          console.log(err);
-          this.doInit({
-            weather: 'sunny',
-            api: '0',
-            temp: '28',
-            adSize: adSize
-          });
-        })
-      }
-      else {
-        this.doInit({
-          weather: 'sunny',
-          api: '0',
-          temp: '28',
-          adSize: adSize
-        });
-      }
+        }
+      }).catch((err) => {
+        console.log(err);
+        this.defaultCondition(adSize);
+      });
     }).catch((error) => {
       console.log(error);
-        this.doInit({
-          weather: 'sunny',
-          api: '0',
-          temp: '28',
-          adSize: adSize
-        });
+      this.defaultCondition(adSize);
     });
+  }
+
+  defaultCondition(adSize) {
+    var hr = (new Date()).getHours();
+    if (hr >= 6 && hr < 20) {
+      this.doInit({
+        weather: 'sunny',
+        api: '30',
+        temp: '28',
+        adSize: adSize
+      });
+    }
+    else {
+      this.doInit({
+        weather: 'cold',
+        api: '30',
+        temp: '24',
+        adSize: adSize
+      });
+    }
   }
 
   doInit(conditions) {
@@ -195,7 +209,10 @@ class AdUnit extends Mads {
   }
 
   events() {
-    console.log('load events');
+    document.getElementById('ad-container').addEventListener('click', () => {
+      this.linkOpener('https://shopee.com.my/Neutrogena-Hydro-Boost-Water-Gel-(50g)-i.62781995.1078001132');
+      this.tracker('CTR', 'link');
+    });
   }
 }
 
