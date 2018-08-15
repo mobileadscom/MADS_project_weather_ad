@@ -44,9 +44,9 @@ class AdUnit extends Mads {
       return w.toString() + 'x' + h.toString();
     }
     else {
-      document.getElementById('rma-widget').style.width = '300px';
+      document.getElementById('rma-widget').style.width = '970px';
       document.getElementById('rma-widget').style.height = '250px';
-      return '300x250';
+      return '970x250';
     }
   }
 
@@ -78,7 +78,7 @@ class AdUnit extends Mads {
         // 8xx - cloudy
         
         var weather = this.idToWeather(res.data.weather[0].id);
-
+        // weather = 'hazy';
         // check if it's hazy
         if (weather == 'hazy') {
           console.log('hazy');
@@ -158,16 +158,6 @@ class AdUnit extends Mads {
     var adSize = this.fixAdSize();
     this.getData(adSize);
 
-    /*return `
-      <div class="container" id="ad-container">
-        <div class="jumbotron">
-          <h1>${this.data.title}</h1>
-          <p>${this.data.sample}</p>
-          <p><a class="btn btn-primary btn-lg button" href="#">Learn More</a></p>
-        </div>
-      </div>
-    `;*/
-
     return `
       <div id="ad-container"></div>
     `;
@@ -175,15 +165,6 @@ class AdUnit extends Mads {
 
   finalRender() {
     const ad = this.params;
-    /*const backgroundNode = 
-      `<img id="ad-background" src="${ad.creative.url}" alt=""${ad.creative.style}>`;
-
-    document.getElementById('ad-container').innerHTML = `
-      ${backgroundNode}
-      <!--<h1 id="ad-headline"${ad.headline.style}>${ad.headline.text}</h1>-->
-      <p id="ad-description"${ad.description.style}>${ad.description.text}</p>
-      <a id="ad-cta"${ad.cta.style} onclick="alert('${ad.cta.url}')">${ad.cta.text}</a>
-    `;*/
     console.log(this.params);
     const backgroundNode = `<img id="ad-background" src="${ad.creative.url}" alt="">`;
     document.getElementById('ad-container').innerHTML = `${backgroundNode}
@@ -200,12 +181,6 @@ class AdUnit extends Mads {
 
   style() {
     console.log('elements', this.elems);
-    return [
-      `
-      body {
-        margin: 0px;
-      }
-      `];
   }
 
   events() {
