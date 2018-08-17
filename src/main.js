@@ -44,16 +44,17 @@ class AdUnit extends Mads {
       return w.toString() + 'x' + h.toString();
     }
     else {
-      document.getElementById('rma-widget').style.width = '970px';
+      document.getElementById('rma-widget').style.width = '300px';
       document.getElementById('rma-widget').style.height = '250px';
-      return '970x250';
+      return '300x250';
     }
   }
 
   getData(adSize) {
     // get latitude and longitude
-    axios.get('http://ip-api.com/json').then((response) => {
-      console.log(response);
+    // axios.get('http://ip-api.com/json').then((response) => {
+    axios.get('https://ipapi.co/json/').then((response) => {
+      console.log(response.data);
 
       // get weather
       var apikeys = ['e8d27050f5101eead5d03a04e03d0e30', 'ac6f574b2e0e75e42a3ec17e145d2731', 'd503554c1185201323f45d8e76c7c757'];
@@ -61,8 +62,8 @@ class AdUnit extends Mads {
       var apikey = apikeys[randomNo];
       axios.get('https://api.openweathermap.org/data/2.5/weather', {
         params: {
-          lat: response.data.lat.toFixed(2).toString(),
-          lon: response.data.lon.toFixed(2).toString(),
+          lat: response.data.latitude.toFixed(2).toString(),
+          lon: response.data.longitude.toFixed(2).toString(),
           appid: apikey
         }
       }).then((res) => {
@@ -84,7 +85,7 @@ class AdUnit extends Mads {
           console.log('hazy');
 
             // get aqi
-            axios.get(`https://api.waqi.info/feed/geo:${response.data.lat};${response.data.lon}/?token=367864ec788156f6ff0b984252e4405d6072b071`).then((r) => { 
+            axios.get(`https://api.waqi.info/feed/geo:${response.data.latitude};${response.data.longitude}/?token=367864ec788156f6ff0b984252e4405d6072b071`).then((r) => { 
               console.log(r);
               this.doInit({
                 weather: weather,
