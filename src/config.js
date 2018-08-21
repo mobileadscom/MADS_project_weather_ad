@@ -14,21 +14,17 @@ export default {
 				"text": "dum",
 				"style": "top: 45px;left: 22px;"
 			},
+            "728x90": {
+                "text": "dum",
+                "style": "top: 13px;left: 142px;"
+            },
             "970x250": {
                 "text": "dum",
                 "style": "top: 75px;left: 25px;"
             },
             "468x60": {
-                "weather": {
-                    "cloudy": {
-                        "text": "dum",
-                        "style": "top: 5px;left: 100px;"
-                    },
-                    "Other": {
-                        "text": "dum",
-                        "style": "top: 8px;left: 100px;"
-                    }
-                }
+                 "text": "dum",
+                "style": "top: 8px;left: 100px;"
             }
 		}
 	},
@@ -39,7 +35,8 @@ export default {
 			"cloudy": {
                 "adSize": {
                     "970x250": "Going to rain soon, there's nothing to worry about!",
-                    // "468x60": "Going to rain soon, there's nothing to worry about!",
+                    "728x90": "Going to rain soon, there's nothing to worry about!",
+                    "468x60": "Going to rain soon, there's nothing to worry about!",
                     "Other": "Going to rain soon, there's <br>nothing to worry about!"
                 }
             },
@@ -48,6 +45,7 @@ export default {
                 "adSize": {
                     "970x250": "Cold Air Conditioning can dry out your skin!",
                     "468x60": "Cold Air Conditioning can dry out your skin!",
+                    "728x90": "Cold Air Conditioning can dry out your skin!",
                     "Other": "Cold Air Conditioning <br>can dry out your skin!"
                 }
             } 
@@ -63,6 +61,10 @@ export default {
 				"text": "dum",
 				"style": "font-size:14px;margin-bottom:4px;"
 			},
+            "728x90": {
+                "text": "dum",
+                "style": "font-size:16px;margin-bottom:9px;"
+            },
             "970x250": {
                 "text": "dum",
                 "style": "font-size:23px;margin-bottom:6px;"
@@ -98,13 +100,13 @@ export default {
             "cloudy": {
                 "adSize": {
                     "970x250": "Hydates, protects and repairs your skin to lock that moisture in.",
-                    // "468x60": "Hydates, protects and repairs your skin to lock <br>that moisture in.",
+                    "728x90": "Hydates, protects and repairs your skin to lock <br>that moisture in.",
                     "Other": "Hydates, protects and repairs <br>your skin to lock that moisture in.",
                 }
             },
 			"hazy": {
                 "adSize": {
-                    "468x60": "Unlock skin's ability to replenish <br>moistures.",
+                    "728x90": "Unlock skin's ability to replenish moistures.",
                     "Other": "Unlock skin's ability to replenish <br>moistures."
                 }
             },
@@ -126,6 +128,10 @@ export default {
     			"text": "dum",
     			"style": "font-size:14px;"
     		},
+            "728x90": {
+                "text": "dum",
+                "style": "font-size:14px;"
+            },
             "970x250": {
                 "text": "dum",
                 "style": "font-size:18px;"
@@ -134,7 +140,7 @@ export default {
                 "weather": {
                     "cloudy": {
                         "text": "dum",
-                    "style": "font-size:11px;"
+                        "style": "font-size:11px;"
                     },
                     "Other": {
                        "text": "dum",
@@ -170,6 +176,30 @@ export default {
     				}
     			}
     		},
+            "468x60": {
+                "weather": {
+                    "hazy": {
+                        "text": "{{api}}<span style=\"font-size: 18px;\">API</span>",
+                        "style": "font-size: 45px;position: absolute;top: -2px;right: -135px;"
+                    },
+                    "Other": {
+                        "text": "{{temp}}<span style=\"font-size: 14px;vertical-align: 18px;\">0</span><span style=\"font-size:18px\">c<span>",
+                        "style": "font-size: 34px;position: absolute;top: 7px;left: 253px;"
+                    }
+                }
+            },
+            "728x90": {
+                "weather": {
+                    "hazy": {
+                        "text": "{{api}}<span style=\"font-size: 24px;\">API</span>",
+                        "style": "font-size: 66px;position: absolute;top: -2px;right:-225px;"
+                    },
+                    "Other": {
+                        "text": "{{temp}}<span style=\"font-size: 28px;vertical-align: 32px;\">0</span><span style=\"font-size:28px\">c<span>",
+                        "style": "font-size: 66px;position: absolute;top: -2px;left: 386px;"
+                    }
+                }
+            },
             "970x250": {
                 "weather": {
                     "hazy": {
@@ -179,22 +209,6 @@ export default {
                     "Other": {
                         "text": "{{temp}}<span style=\"font-size: 42px;vertical-align: 45px;\">0</span><span style=\"font-size:34px\">c<span>",
                         "style": "font-size: 100px;position: absolute;top: -5px;left: 580px;"
-                    }
-                }
-            },
-            "468x60": {
-                "weather": {
-                    "hazy": {
-                        "text": "{{api}}<span style=\"font-size: 22px;\">API</span>",
-                        "style": "font-size: 45px;position: absolute;top: -2px;left: 224px;"
-                    },
-                   /* "cold": {
-                        'text': "{{temp}}<span style=\"font-size: 22px;vertical-align: top;\">0</span><span style=\"font-size:28px\">c<span>",
-                        "style": "font-size: 45px;position: absolute;top: -3px;left: 237px;"
-                    },*/
-                    "Other": {
-                        "text": "{{temp}}<span style=\"font-size: 22px;vertical-align: top;\">0</span><span style=\"font-size:28px\">c<span>",
-                        "style": "font-size: 45px;position: absolute;top: -2px;left: 234px;"
                     }
                 }
             }
@@ -210,6 +224,10 @@ export default {
     			"text": "dum",
 				"style": "top: 200px;left: 20px;font-size: 16px;width: 115px;height: 34px;"
     		},
+            "728x90": {
+                "text": "dum",
+                "style": "top: 44px;left: 15px;font-size: 16px;width: 106px;height: 32px;"
+            },
             "970x250": {
                 "text": "dum",
                 "style": "top: 180px;left: 26px;font-size: 20px;width: 160px;height: 45px;"
@@ -232,6 +250,11 @@ export default {
 				"url": "./img/{{adSize}}-bottle.png",
 				"style": "right: 0px;bottom: 2px;right: 1px;"
     		},
+            "728x90": {
+                "type": "image",
+                "url": "./img/{{adSize}}-bottle.png",
+                "style": "right: 0px;bottom: 2px;right: 1px;"
+            },
             "970x250": {
                 "type": "image",
                 "url": "./img/{{adSize}}-bottle.png",
@@ -256,6 +279,11 @@ export default {
 				"url": "./img/{{adSize}}-logo.png",
 				"style": "top: 0px;left:10px;"
     		},
+            "728x90": {
+                "type": "image",
+                "url": "./img/{{adSize}}-logo.png",
+                "style": "top: 12px;left:12px;"
+            },
             "970x250": {
                 "type": "image",
                 "url": "./img/{{adSize}}-logo.png",
