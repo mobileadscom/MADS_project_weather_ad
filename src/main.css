@@ -39,6 +39,10 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+.ct-btn:hover {
+	cursor: pointer;
+}
+
 .bottle, .logo, .copy {
 	position: absolute;
 }
