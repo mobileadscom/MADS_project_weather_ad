@@ -2,13 +2,14 @@
 export default {
 	"creative": {
 		"type": "image",
-		"url": "./img/{{adSize}}-{{weather}}-bg.png"
+        "url": "./img/{{adSize}}-{{weather}}-animated-bg.gif"
+		// "url": "./img/{{adSize}}-{{weather}}-bg.png"
 	},
 	"copy": {
 		"adSize": {
 			"300x250": {
 				"text": "dum",
-				"style": "top: 45px;left: 12px;"
+				"style": "top: 40px;left: 12px;"
 			},
 			"400x250": {
 				"text": "dum",
@@ -30,7 +31,12 @@ export default {
 	},
 	"headline": {
 		"weather": {
-			"sunny": "Beat the head damage!",
+			"sunny": {
+                "adSize": {
+                    "300x250": "Unlock self-hydration with <br>2x moisture boost on Sunny Day",
+                    "Other": "Unlock self-hydration with <br>2x moisture boost on Sunny Day"
+                }
+            },
 			"rainy": "Stay fresh on rainy day!",
 			"cloudy": {
                 "adSize": {
@@ -55,7 +61,7 @@ export default {
 		"adSize": {
 			"300x250": {
 				"text": "dum",
-				"style": "font-size:14px;margin-bottom:4px;"
+				"style": "font-size:16px;margin-bottom:6px;"
 			},
 			"400x250": {
 				"text": "dum",
@@ -83,7 +89,36 @@ export default {
             }
 		}
 	},
-	"description": {
+    "description": {
+        "adSize": {
+            "300x250": "<span style=\"font-weight: 600;font-size:18px;margin-right:5px;font-style: normal;\">Buy now at 20% off</span> Valid until 22nd Sep"
+        }
+    },
+    "descriptionStyle": {
+        "adSize": {
+            "300x250": {
+                "text": "dum",
+                "style": "font-size:12px;margin-bottom: -2px;"
+            }
+        }
+    },
+    "promoStyle": {
+        "adSize": {
+            "300x250": {
+                "text": "dum",
+                "style": "font-size:12px;top: 170px;left: 12px;line-height: 12px;"
+            }
+        }
+    },
+    "promoCodeStyle": {
+        "adSize": {
+            "300x250": {
+                "text": "dum",
+                "style": "font-size:20px;top: 170px;left: 55px;"
+            }
+        }
+    },
+	/*"description": {
 		"weather": {
 			"sunny": {
                 "adSize": {
@@ -149,18 +184,18 @@ export default {
                 }
             },
     	}
-    },
+    },*/
     "data": {
     	"adSize": {
     		"300x250": {
     			"weather": {
     				"hazy": {
     					"text": "{{api}}<span style=\"font-size: 32px;\">API</span>",
-			    		"style": "font-size: 76px;"
+			    		"style": "font-size: 52px;"
     				},
     				"Other": {
-    					"text": "{{temp}}<span style=\"font-size: 42px;vertical-align: top;\">0</span><span style=\"font-size:32px\">c<span>",
-			    		"style": "font-size: 76px;"
+    					"text": "{{temp}}<span style=\"font-size: 20px;vertical-align: 25px;\">o</span><span style=\"font-size:40px;vertical-align: 14px;\">c<span>",
+			    		"style": "font-size: 52px;"
     				}
     			}
     		},

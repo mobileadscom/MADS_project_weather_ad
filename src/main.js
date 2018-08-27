@@ -79,6 +79,7 @@ class AdUnit extends Mads {
         // 8xx - cloudy
         
         var weather = this.idToWeather(res.data.weather[0].id);
+        weather = 'sunny';
         // weather = 'hazy';
         // check if it's hazy
         if (weather == 'hazy') {
@@ -174,9 +175,25 @@ class AdUnit extends Mads {
       <div class="description" ${ad.descriptionStyle.style}>${ad.description.text}</div>
       <div class="variableData" ${ad.data.style}>${ad.data.text}</div>
     </div>
-    <img src="${ad.logo.url}" ${ad.logo.style} class="logo" />
+    <div class="promo" ${ad.promoStyle.style}>
+      Promo<br>code
+    </div>
+    <div class="promo-code" ${ad.promoCodeStyle.style}>
+      NEU20OFF
+    </div>
     <button class="ct-btn" ${ad.btnStyle.style}>SHOP NOW</button>
     <img src="${ad.bottle.url}" ${ad.bottle.style} class="bottle"/>`;
+
+
+    /*document.getElementById('ad-container').innerHTML = `${backgroundNode}
+    <div class="copy" ${ad.copy.style}>
+      <div class="headline" ${ad.headlineStyle.style}>${ad.headline.text}</div>
+      <div class="description" ${ad.descriptionStyle.style}>${ad.description.text}</div>
+      <div class="variableData" ${ad.data.style}>${ad.data.text}</div>
+    </div>
+    <img src="${ad.logo.url}" ${ad.logo.style} class="logo" />
+    <button class="ct-btn" ${ad.btnStyle.style}>SHOP NOW</button>
+    <img src="${ad.bottle.url}" ${ad.bottle.style} class="bottle"/>`;*/
   }
   
 
