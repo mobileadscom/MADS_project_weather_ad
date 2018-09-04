@@ -79,7 +79,7 @@ class AdUnit extends Mads {
         // 8xx - cloudy
         
         var weather = this.idToWeather(res.data.weather[0].id);
-        weather = 'sunny';
+        // weather = 'cloudy';
         // weather = 'hazy';
         // check if it's hazy
         if (weather == 'hazy') {
@@ -101,10 +101,14 @@ class AdUnit extends Mads {
         }
         else {
           // check for cold weather
-          if (weather != 'rainy') {
+          /*if (weather != 'rainy') {
+
             if (res.data.main.temp - 273.15 < 25) {
               weather = 'cold';
             }
+          }*/
+          if (weather == 'rainy' || weather == 'cloudy') {
+            weather = 'cold';
           }
           console.log(weather);
           this.doInit({
@@ -168,24 +172,35 @@ class AdUnit extends Mads {
   finalRender() {
     const ad = this.params;
     console.log(this.params);
-    const backgroundNode = `<img id="ad-background" src="${ad.creative.url}" alt="">`;
+    const backgroundNode = `<img id="ad-background" src="" alt="">`;
     document.getElementById('ad-container').innerHTML = `${backgroundNode}
-    <div class="copy" ${ad.copy.style}>
-      <div class="headline" ${ad.headlineStyle.style}>${ad.headline.text}</div>
-      <div class="description" ${ad.descriptionStyle.style}>${ad.description.text}</div>
-      <div class="variableData" ${ad.data.style}>${ad.data.text}</div>
+
+      <div class="headline" id="headline" ${ad.headlineStyle.style}>${ad.headline.text}</div>
+      <div class="description" id="description" ${ad.descriptionStyle.style}>${ad.description.text}</div>
+      
+
+    <div class="variableData" ${ad.data.style}>${ad.data.text}</div>
+    <div id="coupon">
+      <div class="promo" ${ad.promoStyle.style}>
+        ${ad.promoStyle.text}
+      </div>
+      <button class="ct-btn" ${ad.btnStyle.style}>SHOP NOW</button>
     </div>
-    <div class="promo" ${ad.promoStyle.style}>
-      Promo<br>code
-    </div>
-    <div class="promo-code" ${ad.promoCodeStyle.style}>
-      NEU20OFF
-    </div>
-    <button class="ct-btn" ${ad.btnStyle.style}>SHOP NOW</button>
     <img src="${ad.bottle.url}" ${ad.bottle.style} class="bottle"/>`;
 
-
-    /*document.getElementById('ad-container').innerHTML = `${backgroundNode}
+    let bg = new Image();
+    bg.onload = (e) => {
+      document.getElementById('ad-background').src = bg.src;
+      setTimeout(() => {
+        document.getElementById('headline').style.opacity = '0';
+        document.getElementById('headline').style.transform = 'translateX(-100%)';
+        document.getElementById('description').style.opacity = '1';
+        document.getElementById('description').style.transform = 'translateX(0)';
+      }, 4000);
+    }
+    bg.src = ad.creative.url;
+    /*const backgroundNode = `<img id="ad-background" src="${ad.creative.url}" alt="">`;
+    document.getElementById('ad-container').innerHTML = `${backgroundNode}
     <div class="copy" ${ad.copy.style}>
       <div class="headline" ${ad.headlineStyle.style}>${ad.headline.text}</div>
       <div class="description" ${ad.descriptionStyle.style}>${ad.description.text}</div>

@@ -14,6 +14,7 @@ body {
 	width: 100%;
 	height: 100%;
 	position: relative;
+	overflow: hidden;
 }
 
 #ad-container:hover {
@@ -30,8 +31,8 @@ body {
 }
 
 .ct-btn {
-	color: white;
-	background-color: #048A9A;
+	color: #048A9A;
+	background-color: white;
 	border: none;
 	font-weight: 600;
 	padding: 6px 10px;
@@ -48,24 +49,37 @@ body {
 }
 
 .copy{
-	color: #F2F4F7;
+	color: white;
+	transition: all 0.5s;
+
 }
 
 .headline {
 	/*font-weight: 600;*/
-	color: #128F9F;
+	color: #F4F6F7;
+	position: absolute;
+	transition: all 0.5s;
 }
 
 .description {
-	color: #148E9F;
-	font-style: italic;
+	transition: all 0.5s;
+	color: #F4F6F7;
+	position: absolute;
+	transform: translateX(100%);
+	opacity: 0;
 }
 
 .variableData {
-	color:  #148E9F;
+	color:  white;
+}
+
+#coupon {
+	transition: all 0.5s;
+	/*transform: translateX(-100%);*/
+	/*opacity: 0;*/
 }
 
 .promo, .promo-code {
 	position: absolute;
-	color:  #148E9F;
+	color: #F4F6F7;
 }

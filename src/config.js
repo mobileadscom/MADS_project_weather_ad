@@ -9,7 +9,7 @@ export default {
 		"adSize": {
 			"300x250": {
 				"text": "dum",
-				"style": "top: 40px;left: 12px;"
+				"style": "top: 110px;left: 12px;"
 			},
 			"400x250": {
 				"text": "dum",
@@ -46,9 +46,15 @@ export default {
                     "Other": "Going to rain soon, there's <br>nothing to worry about!"
                 }
             },
-			"hazy": "The haze dries our your skin.",
+			"hazy": {
+                "adSize": {
+                    "300x250": "Unlock self-hydration with <br>2x moisture boost on Hazy Day",
+                    "Other": "Unlock self-hydration with <br>2x moisture boost on Hazy Day"
+                }
+            },
 			"cold": {
                 "adSize": {
+                    "300x250": "Cold air <br>has a dry bite",
                     "970x250": "Cold Air Conditioning can dry out your skin!",
                     "468x60": "Cold Air Conditioning can dry out your skin!",
                     "728x90": "Cold Air Conditioning can dry out your skin!",
@@ -61,7 +67,7 @@ export default {
 		"adSize": {
 			"300x250": {
 				"text": "dum",
-				"style": "font-size:16px;margin-bottom:6px;"
+				"style": "top:105px;left:14px;font-size:16px;"
 			},
 			"400x250": {
 				"text": "dum",
@@ -90,23 +96,27 @@ export default {
 		}
 	},
     "description": {
-        "adSize": {
-            "300x250": "<span style=\"font-weight: 600;font-size:18px;margin-right:5px;font-style: normal;\">Buy now at 20% off</span> Valid until 22nd Sep"
+        "weather": {
+            "cold": {
+                "adSize": {
+                    "300x250": "Boost skin's ability to <br>regulate and retain <br>moisture"
+                }
+            }
         }
     },
     "descriptionStyle": {
         "adSize": {
             "300x250": {
                 "text": "dum",
-                "style": "font-size:12px;margin-bottom: -2px;"
+                "style": "top:105px;left:14px;font-size:16px;"
             }
         }
     },
     "promoStyle": {
         "adSize": {
             "300x250": {
-                "text": "dum",
-                "style": "font-size:12px;top: 170px;left: 12px;line-height: 12px;"
+                "text": "20% off <span style=\"font-size:14px;\">with</span> NEU20OFF <span style=\"font-size:14px;\">promo code</span>",
+                "style": "font-size:20px;top: 225px;left: 10px;line-height: 12px;"
             }
         }
     },
@@ -190,12 +200,12 @@ export default {
     		"300x250": {
     			"weather": {
     				"hazy": {
-    					"text": "{{api}}<span style=\"font-size: 32px;\">API</span>",
-			    		"style": "font-size: 52px;"
+    					"text": "{{api}}<span style=\"font-size: 22px;\">API</span>",
+			    		"style": "font-size: 52px;position: absolute; top: 102px;left: 12px;"
     				},
     				"Other": {
     					"text": "{{temp}}<span style=\"font-size: 20px;vertical-align: 25px;\">o</span><span style=\"font-size:40px;vertical-align: 14px;\">c<span>",
-			    		"style": "font-size: 52px;"
+			    		"style": "font-size: 52px;position: absolute; top: 40px;left: 12px;"
     				}
     			}
     		},
@@ -253,7 +263,7 @@ export default {
     	"adSize": {
     		"300x250": {
     			"text": "dum",
-				"style": "top: 200px;left: 10px;font-size: 16px;width: 115px;height: 34px;"
+				"style": "top: 170px;left: 10px;font-size: 16px;width: 115px;height: 34px;"
     		},
     		"400x250": {
     			"text": "dum",
