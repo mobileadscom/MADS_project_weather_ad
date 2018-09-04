@@ -33,7 +33,7 @@ export default {
 		"weather": {
 			"sunny": {
                 "adSize": {
-                    "300x250": "Unlock self-hydration with <br>2x moisture boost on Sunny Day",
+                    "300x250": "Douse <br>the sun!",
                     "Other": "Unlock self-hydration with <br>2x moisture boost on Sunny Day"
                 }
             },
@@ -48,7 +48,7 @@ export default {
             },
 			"hazy": {
                 "adSize": {
-                    "300x250": "Unlock self-hydration with <br>2x moisture boost on Hazy Day",
+                    "300x250": "The haze dries out <br> your skin",
                     "Other": "Unlock self-hydration with <br>2x moisture boost on Hazy Day"
                 }
             },
@@ -100,6 +100,16 @@ export default {
             "cold": {
                 "adSize": {
                     "300x250": "Boost skin's ability to <br>regulate and retain <br>moisture"
+                }
+            },
+            "hazy": {
+                "adSize": {
+                    "300x250": "Unlock skin's ability to <br>replenish moisture"
+                }
+            },
+            "sunny": {
+                "adSize": {
+                    "300x250": "Replenish lost moisture <br>from deep within"
                 }
             }
         }
@@ -201,11 +211,11 @@ export default {
     			"weather": {
     				"hazy": {
     					"text": "{{api}}<span style=\"font-size: 22px;\">API</span>",
-			    		"style": "font-size: 52px;position: absolute; top: 102px;left: 12px;"
+			    		"style": "font-size: 52px;position: absolute; top: 35px;left: 12px;"
     				},
     				"Other": {
     					"text": "{{temp}}<span style=\"font-size: 20px;vertical-align: 25px;\">o</span><span style=\"font-size:40px;vertical-align: 14px;\">c<span>",
-			    		"style": "font-size: 52px;position: absolute; top: 40px;left: 12px;"
+			    		"style": "font-size: 52px;position: absolute; top: 35px;left: 12px;"
     				}
     			}
     		},

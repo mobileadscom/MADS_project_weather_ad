@@ -80,7 +80,7 @@ class AdUnit extends Mads {
         
         var weather = this.idToWeather(res.data.weather[0].id);
         // weather = 'cloudy';
-        // weather = 'hazy';
+        // weather = 'sunny';
         // check if it's hazy
         if (weather == 'hazy') {
           console.log('hazy');
@@ -162,11 +162,17 @@ class AdUnit extends Mads {
   render() {
     console.log('data', this.data);
     var adSize = this.fixAdSize();
-    this.getData(adSize);
-
-    return `
-      <div id="ad-container"></div>
-    `;
+    if (window.params.weather) {
+      this.doInit({
+        weather: window.params.weather,
+        api: '30',
+        temp: '24',
+        adSize: adSize
+      });
+    }
+    else {
+      this.getData(adSize);
+    }
   }
 
   finalRender() {
@@ -174,11 +180,8 @@ class AdUnit extends Mads {
     console.log(this.params);
     const backgroundNode = `<img id="ad-background" src="" alt="">`;
     document.getElementById('ad-container').innerHTML = `${backgroundNode}
-
       <div class="headline" id="headline" ${ad.headlineStyle.style}>${ad.headline.text}</div>
       <div class="description" id="description" ${ad.descriptionStyle.style}>${ad.description.text}</div>
-      
-
     <div class="variableData" ${ad.data.style}>${ad.data.text}</div>
     <div id="coupon">
       <div class="promo" ${ad.promoStyle.style}>
@@ -199,16 +202,6 @@ class AdUnit extends Mads {
       }, 4000);
     }
     bg.src = ad.creative.url;
-    /*const backgroundNode = `<img id="ad-background" src="${ad.creative.url}" alt="">`;
-    document.getElementById('ad-container').innerHTML = `${backgroundNode}
-    <div class="copy" ${ad.copy.style}>
-      <div class="headline" ${ad.headlineStyle.style}>${ad.headline.text}</div>
-      <div class="description" ${ad.descriptionStyle.style}>${ad.description.text}</div>
-      <div class="variableData" ${ad.data.style}>${ad.data.text}</div>
-    </div>
-    <img src="${ad.logo.url}" ${ad.logo.style} class="logo" />
-    <button class="ct-btn" ${ad.btnStyle.style}>SHOP NOW</button>
-    <img src="${ad.bottle.url}" ${ad.bottle.style} class="bottle"/>`;*/
   }
   
 
@@ -224,4 +217,28 @@ class AdUnit extends Mads {
   }
 }
 
+function getParams() {
+  var query_string = {};
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+      var pair = vars[i].split("=");
+      // If first entry with this name
+      if (typeof query_string[pair[0]] === "undefined") {
+          query_string[pair[0]] = pair[1];
+      // If second entry with this name
+      } else if (typeof query_string[pair[0]] === "string") {
+          var arr = [ query_string[pair[0]], pair[1] ];
+          query_string[pair[0]] = arr;
+      // If third or later entry with this name
+      } else {
+          query_string[pair[0]].push(pair[1]);
+      }
+  } 
+  return query_string;
+}
+
+window.params = getParams();
+
 window.ad = new AdUnit();
+
