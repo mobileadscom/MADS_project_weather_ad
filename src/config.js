@@ -5,36 +5,12 @@ export default {
         "url": "./img/{{adSize}}-{{weather}}-animated-bg.gif"
 		// "url": "./img/{{adSize}}-{{weather}}-bg.png"
 	},
-	"copy": {
-		"adSize": {
-			"300x250": {
-				"text": "dum",
-				"style": "top: 110px;left: 12px;"
-			},
-			"400x250": {
-				"text": "dum",
-				"style": "top: 45px;left: 22px;"
-			},
-            "728x90": {
-                "text": "dum",
-                "style": "top: 13px;left: 142px;"
-            },
-            "970x250": {
-                "text": "dum",
-                "style": "top: 75px;left: 25px;"
-            },
-            "468x60": {
-                 "text": "dum",
-                "style": "top: 8px;left: 100px;"
-            }
-		}
-	},
 	"headline": {
 		"weather": {
 			"sunny": {
                 "adSize": {
                     "300x250": "Douse <br>the sun!",
-                    "Other": "Unlock self-hydration with <br>2x moisture boost on Sunny Day"
+                    "Other": "Douse the sun!"
                 }
             },
 			"rainy": "Stay fresh on rainy day!",
@@ -49,7 +25,7 @@ export default {
 			"hazy": {
                 "adSize": {
                     "300x250": "The haze dries out <br> your skin",
-                    "Other": "Unlock self-hydration with <br>2x moisture boost on Hazy Day"
+                    "Other": "The haze dries out <br>your skin"
                 }
             },
 			"cold": {
@@ -58,7 +34,7 @@ export default {
                     "970x250": "Cold Air Conditioning can dry out your skin!",
                     "468x60": "Cold Air Conditioning can dry out your skin!",
                     "728x90": "Cold Air Conditioning can dry out your skin!",
-                    "Other": "Cold Air Conditioning <br>can dry out your skin!"
+                    "Other": "Cold air has a dry bite"
                 }
             } 
 		}
@@ -71,7 +47,7 @@ export default {
 			},
 			"400x250": {
 				"text": "dum",
-				"style": "font-size:14px;margin-bottom:4px;"
+				"style": "top:96px;left:25px;font-size:16px;"
 			},
             "728x90": {
                 "text": "dum",
@@ -99,17 +75,20 @@ export default {
         "weather": {
             "cold": {
                 "adSize": {
-                    "300x250": "Boost skin's ability to <br>regulate and retain <br>moisture"
+                    "300x250": "Boost skin's ability to <br>regulate and retain <br>moisture",
+                    "Other": "Boost skin's ability to regulate <br>and retain moisture"
                 }
             },
             "hazy": {
                 "adSize": {
-                    "300x250": "Unlock skin's ability to <br>replenish moisture"
+                    "300x250": "Unlock skin's ability to <br>replenish moisture",
+                    "Other": "Unlock skin's ability to <br>replenish moisture"
                 }
             },
             "sunny": {
                 "adSize": {
-                    "300x250": "Replenish lost moisture <br>from deep within"
+                    "300x250": "Replenish lost moisture <br>from deep within",
+                    "Other": "Replenish lost moisture <br>from deep within"
                 }
             }
         }
@@ -119,6 +98,10 @@ export default {
             "300x250": {
                 "text": "dum",
                 "style": "top:105px;left:14px;font-size:16px;"
+            },
+            "400x250": {
+                "text": "dum",
+                "style": "top:88px;left:25px;font-size:16px;"
             }
         }
     },
@@ -127,84 +110,13 @@ export default {
             "300x250": {
                 "text": "20% off <span style=\"font-size:14px;\">with</span> NEU20OFF <span style=\"font-size:14px;\">promo code</span>",
                 "style": "font-size:20px;top: 225px;left: 10px;line-height: 12px;"
+            },
+             "400x250": {
+                "text": "20% off <span style=\"font-size:14px;\">with</span> NEU20OFF <span style=\"font-size:14px;\">promo code</span>",
+                "style": "font-size:20px;top: 225px;left: 25px;line-height: 12px;"
             }
         }
     },
-    "promoCodeStyle": {
-        "adSize": {
-            "300x250": {
-                "text": "dum",
-                "style": "font-size:20px;top: 170px;left: 55px;"
-            }
-        }
-    },
-	/*"description": {
-		"weather": {
-			"sunny": {
-                "adSize": {
-                    "970x250": "Quench your skin's thirst and locks it deep within your skin all day.",
-                    "Other": "Quench your skin's thirst and <br>locks it deep within your skin all day."
-                }
-            },
-			"rainy": {
-                "adSize": {
-                    "970x250": "Boost your skin hydration and locks it deep within your skin all day.",
-                    "Other": "Boost your skin hydration and <br>locks it deep within your skin all day.",
-                }
-            },
-            "cloudy": {
-                "adSize": {
-                    "970x250": "Hydates, protects and repairs your skin to lock that moisture in.",
-                    "728x90": "Hydates, protects and repairs your skin to lock <br>that moisture in.",
-                    "Other": "Hydates, protects and repairs <br>your skin to lock that moisture in.",
-                }
-            },
-			"hazy": {
-                "adSize": {
-                    "728x90": "Unlock skin's ability to replenish moistures.",
-                    "Other": "Unlock skin's ability to replenish <br>moistures."
-                }
-            },
-			"cold": {
-                "adSize": {
-                    "970x250": "Protects and repairs your skin barrier to lock that moisture in.",
-                    "Other": "Protects and repairs your skin <br>barrier to lock that moisture in."
-                }
-            }
-		}
-    },
-    "descriptionStyle": {
-    	"adSize": {
-    		"300x250": {
-    			"text": "dum",
-    			"style": "font-size:14px;"
-    		},
-    		"400x250": {
-    			"text": "dum",
-    			"style": "font-size:14px;"
-    		},
-            "728x90": {
-                "text": "dum",
-                "style": "font-size:14px;"
-            },
-            "970x250": {
-                "text": "dum",
-                "style": "font-size:18px;"
-            },
-            "468x60": {
-                "weather": {
-                    "cloudy": {
-                        "text": "dum",
-                        "style": "font-size:11px;"
-                    },
-                    "Other": {
-                       "text": "dum",
-                        "style": "font-size:12px;" 
-                    }
-                }
-            },
-    	}
-    },*/
     "data": {
     	"adSize": {
     		"300x250": {
@@ -222,13 +134,13 @@ export default {
     		"400x250": {
     			"weather": {
     				"hazy": {
-    					"text": "{{api}}<span style=\"font-size: 32px;\">API</span>",
-			    		"style": "font-size: 76px;"
-    				},
-    				"Other": {
-    					"text": "{{temp}}<span style=\"font-size: 42px;vertical-align: top;\">0</span><span style=\"font-size:32px\">c<span>",
-			    		"style": "font-size: 76px;"
-    				}
+                        "text": "{{api}}<span style=\"font-size: 22px;\">API</span>",
+                        "style": "font-size: 52px;position: absolute; top: 20px;left: 25px;"
+                    },
+                    "Other": {
+                        "text": "{{temp}}<span style=\"font-size: 20px;vertical-align: 25px;\">o</span><span style=\"font-size:40px;vertical-align: 14px;\">c<span>",
+                        "style": "font-size: 52px;position: absolute; top: 20px;left: 25px;"
+                    }
     			}
     		},
             "468x60": {
@@ -277,7 +189,7 @@ export default {
     		},
     		"400x250": {
     			"text": "dum",
-				"style": "top: 200px;left: 20px;font-size: 16px;width: 115px;height: 34px;"
+				"style": "top: 170px;left: 25px;font-size: 16px;width: 115px;height: 34px;"
     		},
             "728x90": {
                 "text": "dum",
@@ -319,35 +231,6 @@ export default {
                 "type": "image",
                 "url": "./img/{{adSize}}-bottle.png",
                 "style": "right: 0px;bottom: 2px;right: 1px;"
-            },
-    	}
-    },
-    "logo": {
-    	"adSize": {
-    		"300x250": {
-    			"type": "image",
-				"url": "./img/{{adSize}}-logo.png",
-				"style": "top: 0px;left:0px;"
-    		},
-    		"400x250": {
-    			"type": "image",
-				"url": "./img/{{adSize}}-logo.png",
-				"style": "top: 0px;left:10px;"
-    		},
-            "728x90": {
-                "type": "image",
-                "url": "./img/{{adSize}}-logo.png",
-                "style": "top: 12px;left:12px;"
-            },
-            "970x250": {
-                "type": "image",
-                "url": "./img/{{adSize}}-logo.png",
-                "style": "top: 0px;left:0px;"
-            },
-            "468x60": {
-                "type": "image",
-                "url": "./img/{{adSize}}-logo.png",
-                "style": "top: 8px;left:7px;"
             },
     	}
     }
