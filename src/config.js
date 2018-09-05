@@ -33,7 +33,7 @@ export default {
                 "adSize": {
                     "300x250": "Cold air <br>has a dry bite",
                     "970x250": "Cold air has a dry bite",
-                    "468x60": "Cold Air Conditioning can dry out your skin!",
+                    "468x60": "Cold air has a <br>dry bite",
                     "728x90": "Cold Air Conditioning can dry out your skin!",
                     "Other": "Cold air has a dry bite"
                 }
@@ -60,13 +60,13 @@ export default {
             },
              "468x60": {
                 "weather": {
-                    "cloudy": {
+                    "sunny": {
                         "text": "dum",
-                        "style": "font-size:11px;margin-bottom:2px;"
+                        "style": "font-size:14px;top:23px;left:92px;"
                     },
                     "Other": {
                         "text": "dum",
-                        "style": "font-size:12px;margin-bottom:2px;"
+                        "style": "font-size:14px;top:12px;left:92px;" 
                     }
                 }
             }
@@ -77,6 +77,7 @@ export default {
             "cold": {
                 "adSize": {
                     "300x250": "Boost skin's ability to <br>regulate and retain <br>moisture",
+                    "468x60": "Boost skin's ability to <br>regulate and retain <br>moisture",
                     "Other": "Boost skin's ability to regulate <br>and retain moisture"
                 }
             },
@@ -106,6 +107,19 @@ export default {
                 "text": "dum",
                 "style": "top:88px;left:25px;font-size:16px;"
             },
+            "468x60": {
+                "weather": {
+                    "cold": {
+                        "text": "dum",
+                        "style": "font-size:14px;top:4px;left:92px;"
+                    },
+                    "Other": {
+                        "text": "dum",
+                        "style": "font-size:14px;top:12px;left:92px;"
+                    }
+                }
+                
+            },
             "970x250": {
                 "weather": {
                     "cold": {
@@ -129,6 +143,10 @@ export default {
             "400x250": {
                 "text": "20% off <span style=\"font-size:13px;\">with</span> JOHNN20FF <span style=\"font-size:13px;\">promo code</span>",
                 "style": "font-size:19px;top: 225px;left: 25px;line-height: 12px;"
+            },
+            "468x60": {
+                "text": "20% off <span style=\"font-size:10px;\">with</span> JOHNN20FF",
+                "style": "font-size:14px;top: 40px;left: 255px;line-height: 12px;"
             },
             "970x250": {
                 "text": "20% off <span style=\"font-size:18px;\">with</span> JOHNN20FF <span style=\"font-size:18px;\">promo code</span>",
@@ -166,11 +184,11 @@ export default {
                 "weather": {
                     "hazy": {
                         "text": "{{api}}<span style=\"font-size: 18px;\">API</span>",
-                        "style": "font-size: 45px;position: absolute;top: -2px;right: -135px;"
+                        "style": "font-size: 40px;position: absolute;top: 6px;left: 6px;"
                     },
                     "Other": {
-                        "text": "{{temp}}<span style=\"font-size: 14px;vertical-align: 18px;\">0</span><span style=\"font-size:18px\">c<span>",
-                        "style": "font-size: 34px;position: absolute;top: 7px;left: 253px;"
+                        "text": "{{temp}}<span style=\"font-size: 14px;vertical-align: 22px;\">o</span><span style=\"font-size:38px\">c<span>",
+                        "style": "font-size: 46px;position: absolute;top: 2px;left: 6px;"
                     }
                 }
             },
@@ -220,7 +238,7 @@ export default {
             },
             "468x60": {
                 "text": "dum",
-                "style": "top: 28px;left: 7px;font-size: 11px;width: 75px;height: 22px;line-height: 10px;padding: 4px 6px;"
+                "style": "top: 11px;left: 256px;font-size: 11px;width: 75px;height: 22px;line-height: 10px;padding: 4px 6px;"
             }
     	}
     },

@@ -44,9 +44,9 @@ class AdUnit extends Mads {
       return w.toString() + 'x' + h.toString();
     }
     else {
-      document.getElementById('rma-widget').style.width = '970px';
-      document.getElementById('rma-widget').style.height = '250px';
-      return '970x250';
+      document.getElementById('rma-widget').style.width = '468px';
+      document.getElementById('rma-widget').style.height = '60px';
+      return '468x60';
     }
   }
 
@@ -80,7 +80,7 @@ class AdUnit extends Mads {
         
         var weather = this.idToWeather(res.data.weather[0].id);
         // weather = 'cloudy';
-        // weather = 'hazy';
+        // weather = 'sunny';
         // check if it's hazy
         if (weather == 'hazy') {
           console.log('hazy');
