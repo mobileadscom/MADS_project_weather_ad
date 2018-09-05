@@ -44,9 +44,9 @@ class AdUnit extends Mads {
       return w.toString() + 'x' + h.toString();
     }
     else {
-      document.getElementById('rma-widget').style.width = '400px';
+      document.getElementById('rma-widget').style.width = '300px';
       document.getElementById('rma-widget').style.height = '250px';
-      return '400x250';
+      return '300x250';
     }
   }
 
@@ -80,7 +80,7 @@ class AdUnit extends Mads {
         
         var weather = this.idToWeather(res.data.weather[0].id);
         // weather = 'cloudy';
-        weather = 'hazy';
+        // weather = 'sunny';
         // check if it's hazy
         if (weather == 'hazy') {
           console.log('hazy');
@@ -163,16 +163,21 @@ class AdUnit extends Mads {
     console.log('data', this.data);
     var adSize = this.fixAdSize();
     if (window.params.weather) {
-      this.doInit({
-        weather: window.params.weather,
-        api: '30',
-        temp: '24',
-        adSize: adSize
-      });
+      setTimeout(() => {
+        this.doInit({
+          weather: window.params.weather,
+          api: '30',
+          temp: '24',
+          adSize: adSize
+        });    
+      }, 500);
+
     }
     else {
       this.getData(adSize);
     }
+
+    return `<div id="ad-container"></div>`;
   }
 
   finalRender() {

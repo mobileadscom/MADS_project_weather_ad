@@ -97,7 +97,7 @@ export default {
         "adSize": {
             "300x250": {
                 "text": "dum",
-                "style": "top:105px;left:14px;font-size:16px;"
+                "style": "top:102px;left:14px;font-size:16px;"
             },
             "400x250": {
                 "text": "dum",
@@ -108,12 +108,12 @@ export default {
     "promoStyle": {
         "adSize": {
             "300x250": {
-                "text": "20% off <span style=\"font-size:14px;\">with</span> NEU20OFF <span style=\"font-size:14px;\">promo code</span>",
-                "style": "font-size:20px;top: 225px;left: 10px;line-height: 12px;"
+                "text": "20% off <span style=\"font-size:13px;\">with</span> JOHNN20FF <span style=\"font-size:13px;\">promo code</span>",
+                "style": "font-size:19px;top: 225px;left: 10px;line-height: 12px;"
             },
              "400x250": {
-                "text": "20% off <span style=\"font-size:14px;\">with</span> NEU20OFF <span style=\"font-size:14px;\">promo code</span>",
-                "style": "font-size:20px;top: 225px;left: 25px;line-height: 12px;"
+                "text": "20% off <span style=\"font-size:13px;\">with</span> JOHNN20FF <span style=\"font-size:13px;\">promo code</span>",
+                "style": "font-size:19px;top: 225px;left: 25px;line-height: 12px;"
             }
         }
     },
@@ -126,7 +126,7 @@ export default {
 			    		"style": "font-size: 52px;position: absolute; top: 35px;left: 12px;"
     				},
     				"Other": {
-    					"text": "{{temp}}<span style=\"font-size: 20px;vertical-align: 25px;\">o</span><span style=\"font-size:40px;vertical-align: 14px;\">c<span>",
+    					"text": "{{temp}}<span style=\"font-size: 20px;vertical-align: 27px;\">o</span><span style=\"font-size:44px;\">c<span>",
 			    		"style": "font-size: 52px;position: absolute; top: 35px;left: 12px;"
     				}
     			}
@@ -138,7 +138,7 @@ export default {
                         "style": "font-size: 52px;position: absolute; top: 20px;left: 25px;"
                     },
                     "Other": {
-                        "text": "{{temp}}<span style=\"font-size: 20px;vertical-align: 25px;\">o</span><span style=\"font-size:40px;vertical-align: 14px;\">c<span>",
+                        "text": "{{temp}}<span style=\"font-size: 20px;vertical-align: 27px;\">o</span><span style=\"font-size:44px;\">c<span>",
                         "style": "font-size: 52px;position: absolute; top: 20px;left: 25px;"
                     }
     			}
