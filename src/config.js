@@ -25,13 +25,14 @@ export default {
 			"hazy": {
                 "adSize": {
                     "300x250": "The haze dries out <br> your skin",
+                    "970x250": "The haze dries out your skin",
                     "Other": "The haze dries out <br>your skin"
                 }
             },
 			"cold": {
                 "adSize": {
                     "300x250": "Cold air <br>has a dry bite",
-                    "970x250": "Cold Air Conditioning can dry out your skin!",
+                    "970x250": "Cold air has a dry bite",
                     "468x60": "Cold Air Conditioning can dry out your skin!",
                     "728x90": "Cold Air Conditioning can dry out your skin!",
                     "Other": "Cold air has a dry bite"
@@ -55,7 +56,7 @@ export default {
             },
             "970x250": {
                 "text": "dum",
-                "style": "font-size:23px;margin-bottom:6px;"
+                "style": "font-size:30px;top:110px;left:235px;"
             },
              "468x60": {
                 "weather": {
@@ -82,12 +83,14 @@ export default {
             "hazy": {
                 "adSize": {
                     "300x250": "Unlock skin's ability to <br>replenish moisture",
+                    "970x250": "Unlock skin's ability to replenish moisture",
                     "Other": "Unlock skin's ability to <br>replenish moisture"
                 }
             },
             "sunny": {
                 "adSize": {
                     "300x250": "Replenish lost moisture <br>from deep within",
+                    "970x250": "Replenish lost moisture from deep within",
                     "Other": "Replenish lost moisture <br>from deep within"
                 }
             }
@@ -102,6 +105,18 @@ export default {
             "400x250": {
                 "text": "dum",
                 "style": "top:88px;left:25px;font-size:16px;"
+            },
+            "970x250": {
+                "weather": {
+                    "cold": {
+                        "text": "dum",
+                        "style": "font-size:30px;top:73px;left:235px"
+                    },
+                    "Other": {
+                        "text": "dum",
+                        "style": "font-size:30px;top:110px;left:235px;"
+                    }
+                } 
             }
         }
     },
@@ -111,9 +126,13 @@ export default {
                 "text": "20% off <span style=\"font-size:13px;\">with</span> JOHNN20FF <span style=\"font-size:13px;\">promo code</span>",
                 "style": "font-size:19px;top: 225px;left: 10px;line-height: 12px;"
             },
-             "400x250": {
+            "400x250": {
                 "text": "20% off <span style=\"font-size:13px;\">with</span> JOHNN20FF <span style=\"font-size:13px;\">promo code</span>",
                 "style": "font-size:19px;top: 225px;left: 25px;line-height: 12px;"
+            },
+            "970x250": {
+                "text": "20% off <span style=\"font-size:18px;\">with</span> JOHNN20FF <span style=\"font-size:18px;\">promo code</span>",
+                "style": "font-size: 22px;top: 209px;left: 235px;line-height: 12px;"
             }
         }
     },
@@ -170,12 +189,12 @@ export default {
             "970x250": {
                 "weather": {
                     "hazy": {
-                        "text": "{{api}}<span style=\"font-size: 34px;\">API</span>",
-                        "style": "font-size: 100px;position: absolute;top: -5px;right:-375px;"
+                        "text": "{{api}}<span style=\"font-size: 44px;\">API</span>",
+                        "style": "font-size: 80px;position: absolute;top: 62px;left: 36px;"
                     },
                     "Other": {
-                        "text": "{{temp}}<span style=\"font-size: 42px;vertical-align: 45px;\">0</span><span style=\"font-size:34px\">c<span>",
-                        "style": "font-size: 100px;position: absolute;top: -5px;left: 580px;"
+                        "text": "{{temp}}<span style=\"font-size: 27px;vertical-align: 50px;\">o</span><span style=\"font-size:78px;\">c<span>",
+                        "style": "font-size: 94px;position: absolute;top: 48px;left: 36px;"
                     }
                 }
             }
@@ -197,7 +216,7 @@ export default {
             },
             "970x250": {
                 "text": "dum",
-                "style": "top: 180px;left: 26px;font-size: 20px;width: 160px;height: 45px;"
+                "style": "top: 186px;left: 38px;font-size: 22px;width: 155px;height: 43px;line-height: 35px;text-align: center;"
             },
             "468x60": {
                 "text": "dum",
