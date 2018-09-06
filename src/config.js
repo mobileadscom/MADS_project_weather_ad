@@ -26,6 +26,7 @@ export default {
                 "adSize": {
                     "300x250": "The haze dries out <br> your skin",
                     "970x250": "The haze dries out your skin",
+                    "728x90": "The haze dries out your skin",
                     "Other": "The haze dries out <br>your skin"
                 }
             },
@@ -34,7 +35,7 @@ export default {
                     "300x250": "Cold air <br>has a dry bite",
                     "970x250": "Cold air has a dry bite",
                     "468x60": "Cold air has a <br>dry bite",
-                    "728x90": "Cold Air Conditioning can dry out your skin!",
+                    "728x90": "Cold air has a dry bite",
                     "Other": "Cold air has a dry bite"
                 }
             } 
@@ -46,13 +47,33 @@ export default {
 				"text": "dum",
 				"style": "top:105px;left:14px;font-size:16px;"
 			},
+            "320x50": {
+                "weather": {
+                    "hazy": {
+                        "text": "dum",
+                        "style": "top: 11px;font-size: 12px;left: 70px;"
+                    },
+                    "Other": {
+                        "text": "dum",
+                        "style": "top: 20px;font-size: 12px;left: 70px;"
+                    }
+                }
+            },
 			"400x250": {
 				"text": "dum",
 				"style": "top:96px;left:25px;font-size:16px;"
 			},
             "728x90": {
-                "text": "dum",
-                "style": "font-size:16px;margin-bottom:9px;"
+                "weather": {
+                    "hazy": {
+                        "text": "dum",
+                        "style": "font-size: 18px;margin-bottom: 9px;left: 138px;top: 42px;"
+                    },
+                    "Other": {
+                        "text": "dum",
+                        "style": "font-size: 18px;margin-bottom: 9px;left: 138px;top: 42px;"
+                    }
+                }
             },
             "970x250": {
                 "text": "dum",
@@ -77,7 +98,9 @@ export default {
             "cold": {
                 "adSize": {
                     "300x250": "Boost skin's ability to <br>regulate and retain <br>moisture",
+                    "320x50": "Boost skin's ability <br>to regulate and retain moisture",
                     "468x60": "Boost skin's ability to <br>regulate and retain <br>moisture",
+                    "728x90": "Boost skin's ability to <br>regulate and retain moisture",
                     "Other": "Boost skin's ability to regulate <br>and retain moisture"
                 }
             },
@@ -103,9 +126,25 @@ export default {
                 "text": "dum",
                 "style": "top:102px;left:14px;font-size:16px;"
             },
+            "320x50" :{
+                "text": "dum",
+                "style": "top: 11px;font-size: 12px;left: 70px;"
+            },
             "400x250": {
                 "text": "dum",
                 "style": "top:88px;left:25px;font-size:16px;"
+            },
+            "728x90": {
+                "weather": {
+                    "hazy": {
+                        "text": "dum",
+                        "style": "left: 138px;top: 30px;font-size: 18px;"  
+                    },
+                    "Other": {
+                        "text": "dum",
+                        "style": "left: 138px;top: 30px;font-size: 18px;"   
+                    }
+                }
             },
             "468x60": {
                 "weather": {
@@ -140,6 +179,10 @@ export default {
                 "text": "20% off <span style=\"font-size:13px;\">with</span> JOHNN20FF <span style=\"font-size:13px;\">promo code</span>",
                 "style": "font-size:19px;top: 225px;left: 10px;line-height: 12px;"
             },
+            "320x50": {
+                "text": "20% off <span style=\"font-size:9px;\">with</span> <br>JOHNN20FF <span style=\"font-size:9px;\"> code</span>",
+                "style": "left: 124px; top: 10px;font-size: 13px;"
+            },
             "400x250": {
                 "text": "20% off <span style=\"font-size:13px;\">with</span> JOHNN20FF <span style=\"font-size:13px;\">promo code</span>",
                 "style": "font-size:19px;top: 225px;left: 25px;line-height: 12px;"
@@ -147,6 +190,10 @@ export default {
             "468x60": {
                 "text": "20% off <span style=\"font-size:10px;\">with</span> JOHNN20FF",
                 "style": "font-size:14px;top: 40px;left: 255px;line-height: 12px;"
+            },
+            "728x90": {
+                "text": "20% off <span style=\"font-size:12px;\">with</span> JOHNN20FF <span style=\"font-size:12px;\">promo code</span>",
+                "style": "font-size: 18px;top: 65px;left: 375px;line-height: 12px;"
             },
             "970x250": {
                 "text": "20% off <span style=\"font-size:18px;\">with</span> JOHNN20FF <span style=\"font-size:18px;\">promo code</span>",
@@ -168,6 +215,18 @@ export default {
     				}
     			}
     		},
+            "320x50": {
+                "weather": {
+                    "hazy": {
+                        "text": "{{api}}<span style=\"font-size: 16px;\">API</span>",
+                        "style": "font-size: 28px;position: absolute;top: 11px;left: 3px;"
+                    },
+                    "Other": {
+                        "text": "{{temp}}<span style=\"font-size: 12px;vertical-align: 16px;\">o</span><span style=\"font-size:30px;\">c<span>",
+                        "style": "font-size: 32px;position: absolute;top: 6px;left: 3px;"
+                    }
+                }
+            },
     		"400x250": {
     			"weather": {
     				"hazy": {
@@ -195,12 +254,12 @@ export default {
             "728x90": {
                 "weather": {
                     "hazy": {
-                        "text": "{{api}}<span style=\"font-size: 24px;\">API</span>",
-                        "style": "font-size: 66px;position: absolute;top: -2px;right:-225px;"
+                        "text": "{{api}}<span style=\"font-size: 30px;\">API</span>",
+                        "style": "font-size: 62px;position: absolute;top: 10px;left: 10px;"
                     },
                     "Other": {
-                        "text": "{{temp}}<span style=\"font-size: 28px;vertical-align: 32px;\">0</span><span style=\"font-size:28px\">c<span>",
-                        "style": "font-size: 66px;position: absolute;top: -2px;left: 386px;"
+                        "text": "{{temp}}<span style=\"font-size: 20px;vertical-align: 34px;\">o</span><span style=\"font-size:48px\">c<span>",
+                        "style": "font-size: 62px;position: absolute;top: 10px;left: 10px;"
                     }
                 }
             },
@@ -224,13 +283,17 @@ export default {
     			"text": "dum",
 				"style": "top: 170px;left: 10px;font-size: 16px;width: 115px;height: 34px;"
     		},
+            "320x50": {
+                "text": "dum",
+                "style": "left: 70px;top: 10px;width: 46px;font-size: 10px;height: 30px;padding: 0px;"
+            },
     		"400x250": {
     			"text": "dum",
 				"style": "top: 170px;left: 25px;font-size: 16px;width: 115px;height: 34px;"
     		},
             "728x90": {
                 "text": "dum",
-                "style": "top: 44px;left: 15px;font-size: 16px;width: 106px;height: 32px;"
+                "style": "top: 22px;left: 375px; font-size: 16px;width: 106px;height: 32px;"
             },
             "970x250": {
                 "text": "dum",
@@ -249,6 +312,11 @@ export default {
 				"url": "./img/{{adSize}}-bottle.png",
 				"style": "right: 0px;bottom: 2px;right: 1px;"
     		},
+            "320x50": {
+                "type": "image",
+                "url": "./img/{{adSize}}-bottle.png",
+                "style": "right: 0px;bottom: 0px;right: 0px;"
+            },
     		"400x250": {
     			"type": "image",
 				"url": "./img/{{adSize}}-bottle.png",

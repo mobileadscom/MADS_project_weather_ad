@@ -44,9 +44,9 @@ class AdUnit extends Mads {
       return w.toString() + 'x' + h.toString();
     }
     else {
-      document.getElementById('rma-widget').style.width = '468px';
-      document.getElementById('rma-widget').style.height = '60px';
-      return '468x60';
+      document.getElementById('rma-widget').style.width = '320px';
+      document.getElementById('rma-widget').style.height = '50px';
+      return '320x50';
     }
   }
 
@@ -79,7 +79,6 @@ class AdUnit extends Mads {
         // 8xx - cloudy
         
         var weather = this.idToWeather(res.data.weather[0].id);
-        // weather = 'cloudy';
         // weather = 'sunny';
         // check if it's hazy
         if (weather == 'hazy') {
@@ -149,7 +148,8 @@ class AdUnit extends Mads {
   }
 
   doInit(conditions) {
-    console.log(conditions);
+    this.conditions = conditions;
+    console.log(this.conditions);
     const conditionsLowerCase = {};
     for (let i in conditions) {
       conditionsLowerCase[i] = conditions[i].toLowerCase();
@@ -192,21 +192,42 @@ class AdUnit extends Mads {
       <div class="promo" ${ad.promoStyle.style}>
         ${ad.promoStyle.text}
       </div>
-      <button class="ct-btn" ${ad.btnStyle.style}>SHOP NOW</button>
+      <button class="ct-btn" ${ad.btnStyle.style} id="ctBTN">SHOP NOW</button>
     </div>
     <img src="${ad.bottle.url}" ${ad.bottle.style} class="bottle"/>`;
 
     let bg = new Image();
     bg.onload = (e) => {
       document.getElementById('ad-background').src = bg.src;
-      setTimeout(() => {
-        document.getElementById('headline').style.opacity = '0';
-        document.getElementById('headline').style.transform = 'translateX(-100%)';
-        document.getElementById('description').style.opacity = '1';
-        document.getElementById('description').style.transform = 'translateX(0)';
-      }, 4000);
+      if (this.conditions.adSize == '320x50') {
+        document.getElementById('coupon').style.opacity = 0;
+        document.getElementById('coupon').style.transform = 'translateX(100%)';
+        setTimeout(() => {
+          document.getElementById('headline').style.opacity = '0';
+          document.getElementById('headline').style.transform = 'translateX(-100%)';
+          document.getElementById('description').style.opacity = '1';
+          document.getElementById('description').style.transform = 'translateX(0)';
+          document.getElementById('coupon').style.transition = 'all 0.5s';
+        }, 3000);
+        setTimeout(() => {
+          document.getElementById('description').style.opacity = '0';
+          document.getElementById('description').style.transform = 'translateX(-100%)';
+          document.getElementById('coupon').style.opacity = 1;
+          document.getElementById('coupon').style.transform = 'translateX(0)';
+        }, 6000);
+      }
+      else {
+        setTimeout(() => {
+          document.getElementById('headline').style.opacity = '0';
+          document.getElementById('headline').style.transform = 'translateX(-100%)';
+          document.getElementById('description').style.opacity = '1';
+          document.getElementById('description').style.transform = 'translateX(0)';
+        }, 4000);
+      }
+      
     }
     bg.src = ad.creative.url;
+    this.tracker('E', 'v_' + this.conditions.weather);
   }
   
 
@@ -217,7 +238,7 @@ class AdUnit extends Mads {
   events() {
     document.getElementById('ad-container').addEventListener('click', () => {
       this.linkOpener('https://shopee.com.my/Neutrogena-Hydro-Boost-Water-Gel-(50g)-i.62781995.1078001132');
-      this.tracker('CTR', 'link');
+      this.tracker('CTR', 'link', 'link', 'v_' + this.conditions.weather);
     });
   }
 }
