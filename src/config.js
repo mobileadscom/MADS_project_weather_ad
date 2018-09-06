@@ -281,27 +281,27 @@ export default {
     	"adSize": {
     		"300x250": {
     			"text": "dum",
-				"style": "top: 170px;left: 10px;font-size: 16px;width: 115px;height: 34px;"
+				"style": "top: 170px;left: 10px;font-size: 15px;padding: 2px 18px;height: 34px;"
     		},
             "320x50": {
                 "text": "dum",
-                "style": "left: 70px;top: 10px;width: 46px;font-size: 10px;height: 30px;padding: 0px;"
+                "style": "left: 70px;top: 10px;width: 46px;font-size: 9px;height: 30px;padding: 0px;"
             },
     		"400x250": {
     			"text": "dum",
-				"style": "top: 170px;left: 25px;font-size: 16px;width: 115px;height: 34px;"
+				"style": "top: 170px;left: 25px;font-size: 15px;padding: 2px 18px;height: 34px;"
     		},
             "728x90": {
                 "text": "dum",
-                "style": "top: 22px;left: 375px; font-size: 16px;width: 106px;height: 32px;"
+                "style": "top: 22px;left: 375px; font-size: 15px;padding: 4px 12px;height: 32px;"
             },
             "970x250": {
                 "text": "dum",
-                "style": "top: 186px;left: 38px;font-size: 22px;width: 155px;height: 43px;line-height: 35px;text-align: center;"
+                "style": "top: 186px;left: 38px;font-size: 21px;padding: 2px 22px;height: 43px;line-height: 35px;text-align: center;"
             },
             "468x60": {
                 "text": "dum",
-                "style": "top: 11px;left: 256px;font-size: 11px;width: 75px;height: 22px;line-height: 10px;padding: 4px 6px;"
+                "style": "top: 11px;left: 256px;font-size: 10px;padding: 2px 11px;height: 22px;line-height: 10px;"
             }
     	}
     },

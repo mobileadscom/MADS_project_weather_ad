@@ -44,20 +44,18 @@ class AdUnit extends Mads {
       document.getElementById('rma-widget').style.width = w.toString() + 'px';
       document.getElementById('rma-widget').style.height = h.toString() + 'px';
       if ((w.toString() + 'x' + h.toString()) == '730x90') {
-        console.log('728x90')
         return '728x90';
       }
       if ((w.toString() + 'x' + h.toString()) == '470x60') {
-        console.log('468x60')
         return '468x60'
       }
       console.log(w.toString() + 'x' + h.toString());
       return w.toString() + 'x' + h.toString();
     }
     else {
-      document.getElementById('rma-widget').style.width = '728px';
-      document.getElementById('rma-widget').style.height = '90px';
-      return '728x90';
+      document.getElementById('rma-widget').style.width = '468px';
+      document.getElementById('rma-widget').style.height = '60px';
+      return '468x60';
     }
   }
 
@@ -90,7 +88,7 @@ class AdUnit extends Mads {
         // 8xx - cloudy
         
         var weather = this.idToWeather(res.data.weather[0].id);
-        // weather = 'sunny';
+
         // check if it's hazy
         if (weather == 'hazy') {
           console.log('hazy');
@@ -106,7 +104,19 @@ class AdUnit extends Mads {
               });
             }).catch((e) => {
               console.log(e);
-              this.defaultCondition(adSize);
+               // for some reason the api will return error the first time
+                axios.get(`https://api.waqi.info/feed/geo:${response.data.latitude};${response.data.longitude}/?token=367864ec788156f6ff0b984252e4405d6072b071`).then((re) => { 
+                console.log(re);
+                this.doInit({
+                  weather: weather,
+                  api: re.data.data.aqi.toString(),
+                  temp: (res.data.main.temp - 273.16).toFixed(0).toString(),
+                  adSize: adSize
+                });
+              }).catch((er) => {
+                console.log(er);
+                this.defaultCondition(adSize);
+              });
             });
         }
         else {
