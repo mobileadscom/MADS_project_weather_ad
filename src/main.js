@@ -39,14 +39,25 @@ class AdUnit extends Mads {
       var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
       w = Math.round(w / 10) * 10;
       h = Math.round(h / 10) * 10;
+      w == 730 ? 728 : w;
+      w == 470 ? 468 : w; 
       document.getElementById('rma-widget').style.width = w.toString() + 'px';
       document.getElementById('rma-widget').style.height = h.toString() + 'px';
+      if ((w.toString() + 'x' + h.toString()) == '730x90') {
+        console.log('728x90')
+        return '728x90';
+      }
+      if ((w.toString() + 'x' + h.toString()) == '470x60') {
+        console.log('468x60')
+        return '468x60'
+      }
+      console.log(w.toString() + 'x' + h.toString());
       return w.toString() + 'x' + h.toString();
     }
     else {
-      document.getElementById('rma-widget').style.width = '320px';
-      document.getElementById('rma-widget').style.height = '50px';
-      return '320x50';
+      document.getElementById('rma-widget').style.width = '728px';
+      document.getElementById('rma-widget').style.height = '90px';
+      return '728x90';
     }
   }
 
