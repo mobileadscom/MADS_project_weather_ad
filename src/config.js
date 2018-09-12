@@ -61,7 +61,7 @@ export default {
             },
 			"400x250": {
 				"text": "dum",
-				"style": "top:96px;left:25px;font-size:16px;"
+				"style": "top:116px;left:25px;font-size:16px;"
 			},
             "728x90": {
                 "weather": {
@@ -132,7 +132,7 @@ export default {
             },
             "400x250": {
                 "text": "dum",
-                "style": "top:88px;left:25px;font-size:16px;"
+                "style": "top:108px;left:25px;font-size:16px;"
             },
             "728x90": {
                 "weather": {
@@ -218,8 +218,8 @@ export default {
             "320x50": {
                 "weather": {
                     "hazy": {
-                        "text": "{{api}}<span style=\"font-size: 16px;\">API</span>",
-                        "style": "font-size: 28px;position: absolute;top: 11px;left: 3px;"
+                        "text": "{{api}}<span style=\"font-size: 14px;\">API</span>",
+                        "style": "font-size: 32px;position: absolute;top: 6px;left: 3px;"
                     },
                     "Other": {
                         "text": "{{temp}}<span style=\"font-size: 12px;vertical-align: 16px;\">o</span><span style=\"font-size:30px;\">c<span>",
@@ -231,19 +231,19 @@ export default {
     			"weather": {
     				"hazy": {
                         "text": "{{api}}<span style=\"font-size: 22px;\">API</span>",
-                        "style": "font-size: 52px;position: absolute; top: 20px;left: 25px;"
+                        "style": "font-size: 52px;position: absolute; top: 40px;left: 25px;"
                     },
                     "Other": {
                         "text": "{{temp}}<span style=\"font-size: 20px;vertical-align: 27px;\">o</span><span style=\"font-size:44px;\">c<span>",
-                        "style": "font-size: 52px;position: absolute; top: 20px;left: 25px;"
+                        "style": "font-size: 52px;position: absolute; top: 40px;left: 25px;"
                     }
     			}
     		},
             "468x60": {
                 "weather": {
                     "hazy": {
-                        "text": "{{api}}<span style=\"font-size: 18px;\">API</span>",
-                        "style": "font-size: 40px;position: absolute;top: 6px;left: 6px;"
+                        "text": "{{api}}<span style=\"font-size: 16px;\">API</span>",
+                        "style": "font-size: 46px;position: absolute;top: 2px;left: 6px;"
                     },
                     "Other": {
                         "text": "{{temp}}<span style=\"font-size: 14px;vertical-align: 22px;\">o</span><span style=\"font-size:38px\">c<span>",
@@ -266,8 +266,8 @@ export default {
             "970x250": {
                 "weather": {
                     "hazy": {
-                        "text": "{{api}}<span style=\"font-size: 44px;\">API</span>",
-                        "style": "font-size: 80px;position: absolute;top: 62px;left: 36px;"
+                        "text": "{{api}}<span style=\"font-size: 40px;\">API</span>",
+                        "style": "font-size: 94px;position: absolute;top: 62px;left: 36px;"
                     },
                     "Other": {
                         "text": "{{temp}}<span style=\"font-size: 27px;vertical-align: 50px;\">o</span><span style=\"font-size:78px;\">c<span>",

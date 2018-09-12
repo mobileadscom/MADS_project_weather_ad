@@ -53,17 +53,17 @@ class AdUnit extends Mads {
       return w.toString() + 'x' + h.toString();
     }
     else {
-      document.getElementById('rma-widget').style.width = '468px';
-      document.getElementById('rma-widget').style.height = '60px';
-      return '468x60';
+      document.getElementById('rma-widget').style.width = '300px';
+      document.getElementById('rma-widget').style.height = '250px';
+      return '300x250';
     }
   }
 
   getData(adSize) {
     // get latitude and longitude
     // axios.get('http://ip-api.com/json').then((response) => {
-    axios.get('https://ipapi.co/json/').then((response) => {
-      console.log(response.data);
+    // axios.get('https://ipapi.co/json/').then((response) => {
+    //   console.log(response.data);
 
       // get weather
       var apikeys = ['e8d27050f5101eead5d03a04e03d0e30', 'ac6f574b2e0e75e42a3ec17e145d2731', 'd503554c1185201323f45d8e76c7c757'];
@@ -71,8 +71,10 @@ class AdUnit extends Mads {
       var apikey = apikeys[randomNo];
       axios.get('https://api.openweathermap.org/data/2.5/weather', {
         params: {
-          lat: response.data.latitude.toFixed(2).toString(),
-          lon: response.data.longitude.toFixed(2).toString(),
+          // lat: response.data.latitude.toFixed(2).toString(),
+          // lon: response.data.longitude.toFixed(2).toString(),
+          lat: 3.09,
+          lon: 101.61,
           appid: apikey
         }
       }).then((res) => {
@@ -88,7 +90,7 @@ class AdUnit extends Mads {
         // 8xx - cloudy
         
         var weather = this.idToWeather(res.data.weather[0].id);
-
+        // weather = 'hazy';
         // check if it's hazy
         if (weather == 'hazy') {
           console.log('hazy');
@@ -142,10 +144,10 @@ class AdUnit extends Mads {
         console.log(err);
         this.defaultCondition(adSize);
       });
-    }).catch((error) => {
-      console.log(error);
-      this.defaultCondition(adSize);
-    });
+    // }).catch((error) => {
+    //   console.log(error);
+    //   this.defaultCondition(adSize);
+    // });
   }
 
   defaultCondition(adSize) {
@@ -200,6 +202,18 @@ class AdUnit extends Mads {
 
     return `<div id="ad-container"></div>`;
   }
+  
+/*  trackVariation(weather) {
+    console.log(weather);
+     if (window.ad.custTracker.length > 0) {
+      var trackingUrl =  window.ad.custTracker[0].replace('{{rmatype}}', weather).replace('{{rmatt}}', 'E').replace('{{rmavalue}}', '');
+      trackingUrl += window.ad.tags;
+      console.log(trackingUrl);
+      var pixel = document.createElement('img');
+      pixel.src = trackingUrl;
+      document.body.appendChild(pixel);
+    }
+  }*/
 
   finalRender() {
     const ad = this.params;
@@ -248,7 +262,7 @@ class AdUnit extends Mads {
       
     }
     bg.src = ad.creative.url;
-    this.tracker('E', 'v_' + this.conditions.weather);
+    this.tracker('', 'v_' + this.conditions.weather);
   }
   
 
@@ -257,6 +271,7 @@ class AdUnit extends Mads {
   }
 
   events() {
+    console.log(window.ad);
     document.getElementById('ad-container').addEventListener('click', () => {
       this.linkOpener('https://shopee.com.my/Neutrogena-Hydro-Boost-Water-Gel-(50g)-i.62781995.1078001132');
       this.tracker('CTR', 'link', 'link', 'v_' + this.conditions.weather);
