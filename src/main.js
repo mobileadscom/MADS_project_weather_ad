@@ -62,8 +62,9 @@ class AdUnit extends Mads {
   getData(adSize) {
     // get latitude and longitude
     // axios.get('http://ip-api.com/json').then((response) => {
+    axios.get('https://geoip.nekudo.com/api').then((response) => {
     // axios.get('https://ipapi.co/json/').then((response) => {
-    //   console.log(response.data);
+      console.log(response.data);
 
       // get weather
       var apikeys = ['e8d27050f5101eead5d03a04e03d0e30', 'ac6f574b2e0e75e42a3ec17e145d2731', 'd503554c1185201323f45d8e76c7c757'];
@@ -73,8 +74,10 @@ class AdUnit extends Mads {
         params: {
           // lat: response.data.latitude.toFixed(2).toString(),
           // lon: response.data.longitude.toFixed(2).toString(),
-          lat: 3.09,
-          lon: 101.61,
+          lat: response.data.location.latitude.toFixed(2).toString(),
+          lon: response.data.location.longitude.toFixed(2).toString(),
+          // lat: 3.09,
+          // lon: 101.61,
           appid: apikey
         }
       }).then((res) => {
@@ -130,7 +133,15 @@ class AdUnit extends Mads {
             }
           }*/
           if (weather == 'rainy' || weather == 'cloudy') {
-            weather = 'cold';
+            if (res.data.main.temp - 273.15 < 30) {
+              weather = 'cold';
+            }
+            else {
+              weather = 'sunny';
+            }
+          }
+          else {
+            weather = 'sunny';
           }
           console.log(weather);
           this.doInit({
@@ -144,10 +155,10 @@ class AdUnit extends Mads {
         console.log(err);
         this.defaultCondition(adSize);
       });
-    // }).catch((error) => {
-    //   console.log(error);
-    //   this.defaultCondition(adSize);
-    // });
+    }).catch((error) => {
+      console.log(error);
+      this.defaultCondition(adSize);
+    });
   }
 
   defaultCondition(adSize) {
@@ -156,7 +167,7 @@ class AdUnit extends Mads {
       this.doInit({
         weather: 'sunny',
         api: '30',
-        temp: '28',
+        temp: '30',
         adSize: adSize
       });
     }
