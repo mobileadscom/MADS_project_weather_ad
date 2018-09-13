@@ -67,8 +67,18 @@ class AdUnit extends Mads {
       console.log(response.data);
 
       // get weather
-      var apikeys = ['e8d27050f5101eead5d03a04e03d0e30', 'ac6f574b2e0e75e42a3ec17e145d2731', 'd503554c1185201323f45d8e76c7c757'];
-      var randomNo = Math.floor(Math.random() * 3 );
+      var apikeys = ['e8d27050f5101eead5d03a04e03d0e30',
+      'ac6f574b2e0e75e42a3ec17e145d2731', 
+      'd503554c1185201323f45d8e76c7c757', 
+      'afcc0bd7d2c28fe04b2fab997c704d4c', 
+      '292ad821cf63b45321dc1d6f2b84d30b',
+      '7841e0367adc2d932fc764d3f0ecff00',
+      '889d3769a4beea334df3300e4fce3558',
+      '100c4e3f37582a48fdd7c5c3e90a3c56',
+      '0e398b03958ba3592fee9a1d1c53530f',
+      '3315232aac35762b1a6c6734d506a69f'];
+
+      var randomNo = Math.floor(Math.random() * apikeys.length );
       var apikey = apikeys[randomNo];
       axios.get('https://api.openweathermap.org/data/2.5/weather', {
         params: {
